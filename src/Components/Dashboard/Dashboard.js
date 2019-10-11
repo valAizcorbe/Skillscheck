@@ -12,7 +12,7 @@ class Dashboard extends React.Component {
 
   deleteUser = () => {
     axios
-      .delete(`/api/product/${this.props.product_id}`)
+      .delete(`/api/product/${this.props.product.product_id}`)
       .then(res => {
         this.props.getInventory();
       })
@@ -20,9 +20,9 @@ class Dashboard extends React.Component {
   };
 
   render() {
-    let mappedProducts = this.state.inventory.map((element, index) => {
-      return <Product element={element} index={index} />;
-    });
+    // let mappedProducts = this.state.inventory.map((element, index) => {
+    //   return <Product element={element} index={index} />;
+    // });
     return (
       <div>
         <Product />

@@ -4,6 +4,7 @@ import "./App.css";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import Header from "./Components/Header/Header";
 import Form from "./Components/Form/Form";
+import Product from "./Components/Product/Product";
 
 class App extends Component {
   constructor(props) {
@@ -25,8 +26,9 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Dashboard key={this.props.componentDidMount} />
+        <Dashboard key={this.componentDidMount} />
         <Form key={this.props.componentDidMount} />
+        <Product />
       </div>
     );
   }

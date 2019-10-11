@@ -3,8 +3,8 @@ import axios from "axios";
 import Dashboard from "../Dashboard/Dashboard";
 
 class Form extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.initialState = {
       name: "",
       price: 0,
@@ -47,6 +47,8 @@ class Form extends Component {
     this.setState(this.initialState);
   };
 
+  //   handleDelete;
+
   render() {
     console.log(this.state);
     return (
@@ -72,7 +74,7 @@ class Form extends Component {
         />
         <button onClick={() => this.resetState()}>Cancel</button>
         <button onClick={this.createProduct}>Add to Inventory</button>
-        <Dashboard />
+        <Dashboard key={this.props.componentDidMount} />
       </div>
     );
   }
