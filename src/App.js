@@ -25,8 +25,8 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Dashboard key={this.state.inventory} />
-        <Form key={this.componentDidMount} />
+        <Dashboard key={this.props.componentDidMount} />
+        <Form key={this.props.componentDidMount} />
       </div>
     );
   }

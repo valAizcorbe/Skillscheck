@@ -1,5 +1,6 @@
 import React from "react";
 import Product from "../Product/Product";
+import axios from "axios";
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -8,6 +9,15 @@ class Dashboard extends React.Component {
       inventory: []
     };
   }
+
+  deleteUser = () => {
+    axios
+      .delete(`/api/product/${this.props.product_id}`)
+      .then(res => {
+        this.props.getInventory();
+      })
+      .catch(err => console.log(err));
+  };
 
   render() {
     let mappedProducts = this.state.inventory.map((element, index) => {
