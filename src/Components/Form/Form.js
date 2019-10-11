@@ -11,7 +11,14 @@ class Form extends Component {
   }
 
   render() {
-    return <div>Form</div>;
+    return (
+      <div>
+        Form
+        <input></input>
+        <input></input>
+        <input></input>
+      </div>
+    );
   }
 }
 
