@@ -5,10 +5,29 @@ import Header from "./Components/Header/Header";
 import Form from "./Components/Form/Form";
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      inventory: []
+      inventory: [
+        {
+          name: "Tesla X",
+          price: 80000,
+          imgurl:
+            "https://file.kbb.com/kbb/vehicleimage/evoxseo/cp/l/13720/2019-tesla-model%20x-front_13720_032_640x480_ppsw.png"
+        },
+        {
+          name: "Tesla S",
+          price: 60000,
+          imgurl:
+            "https://file.kbb.com/kbb/vehicleimage/evoxseo/cp/l/13794/2019-tesla-model%20s-front_13794_032_640x480_ppsw.png"
+        },
+        {
+          name: "Tesla 3",
+          price: 30000,
+          imgurl:
+            "https://file.kbb.com/kbb/vehicleimage/evoxseo/cp/l/12659/2017-tesla-model%203-front_12659_032_640x480_ppsw.png"
+        }
+      ]
     };
   }
 
@@ -16,7 +35,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Dashboard />
+        <Dashboard key={this.props.inventory} />
         <Form />
       </div>
     );
