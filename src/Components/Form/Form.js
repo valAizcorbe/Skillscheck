@@ -24,6 +24,15 @@ class Form extends Component {
     });
   };
 
+  updateProduct = () => {
+    const updatedForm = {
+      name: this.state.name,
+      price: this.state.price,
+      img: this.state.img
+    };
+    axios.put();
+  };
+
   handleChange = e => {
     let { name } = e.target;
     this.setState({

@@ -26,5 +26,13 @@ module.exports = {
       .catch(err => {
         res.status(500).send({ errorMessage: "it's not freaking working" });
       });
+  },
+  updateProduct: (req, res) => {
+    const { id } = req.params;
+    const { name, price, img } = req.body;
+    const db = req.app.get("db");
+    db.update_product([name, price, img])
+      .then(data => res.status(200).send(data))
+      .catch(err => res.status(500).send(err));
   }
 };
