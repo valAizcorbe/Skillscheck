@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import axios from "axios";
+import Dashboard from "../Dashboard/Dashboard";
 
 class Form extends Component {
   constructor() {
@@ -6,10 +8,21 @@ class Form extends Component {
     this.initialState = {
       name: "",
       price: 0,
-      imgurl: ""
+      img: ""
     };
     this.state = this.initialState;
   }
+
+  createProduct = () => {
+    const newProduct = {
+      name: this.state.name,
+      price: this.state.price,
+      img: this.state.img
+    };
+    axios.post("/api/product", { newProduct }).then(res => {
+      this.setState({ inventory: res.data, name: "", price: 0, img: "" });
+    });
+  };
 
   handleChange = e => {
     let { name } = e.target;
@@ -41,8 +54,8 @@ class Form extends Component {
         Form
         <label>Image Url</label>
         <input
-          name="imgurl"
-          value={this.state.imgurl}
+          name="img"
+          value={this.state.img}
           onChange={e => this.handleChange(e)}
         />
         <label>Product Name</label>
@@ -58,7 +71,8 @@ class Form extends Component {
           onChange={e => this.handleChange(e)}
         />
         <button onClick={() => this.resetState()}>Cancel</button>
-        <button>Add to Inventory</button>
+        <button onClick={this.createProduct}>Add to Inventory</button>
+        <Dashboard />
       </div>
     );
   }

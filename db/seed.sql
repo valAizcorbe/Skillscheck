@@ -1,4 +1,4 @@
-CREATE TABLE products (
+CREATE TABLE inventory (
 id SERIAL PRIMARY KEY,
 name VARCHAR(50),
 price INTEGER,

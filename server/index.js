@@ -11,8 +11,9 @@ massive(CONNECTION_STRING)
   .then(db => {
     app.set("db", db);
     app.listen(SERVER_PORT, console.log(`Running on Port: ${SERVER_PORT}`));
-    console.log("db connected");
+    console.log("It worked!!! Woohoo!!!");
   })
   .catch(err => console.log(err));
 
-app.get("api/inventory", ctrl.getProduct);
+app.get("/api/inventory", ctrl.getInventory);
+app.post("/api/product", ctrl.createProduct);
