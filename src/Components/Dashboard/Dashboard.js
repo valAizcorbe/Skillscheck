@@ -1,8 +1,18 @@
-import React, { Components } from "react";
+import React, { Component } from "react";
+import Product from "../Product/Product";
 
-class Dashboard extends Components {
+class Dashboard extends Component {
+  constructor() {
+    super();
+    this.state = {};
+  }
+
   render() {
-    return <div>Dashboard</div>;
+    return (
+      <div>
+        <Product />
+      </div>
+    );
   }
 }
 

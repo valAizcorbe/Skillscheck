@@ -1,6 +1,10 @@
-import React, { Components } from "react";
+import React, { Component } from "react";
 
-class Product extends Components {
+class Product extends Component {
+  constructor() {
+    super();
+    this.state = {};
+  }
   render() {
     return <div>Product</div>;
   }

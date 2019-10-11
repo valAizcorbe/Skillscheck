@@ -1,6 +1,11 @@
-import React, { Components } from "react";
+import React, { Component } from "react";
 
-class Form extends Components {
+class Form extends Component {
+  constructor() {
+    super();
+    this.state = {};
+  }
+
   render() {
     return <div>Form</div>;
   }
